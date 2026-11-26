@@ -29,3 +29,14 @@
     python3 -m unittest discover -v
 
 资料读取器会按文件统计各类参与方消息的数量。演练记录只描述各参与方交给系统的输入。
+
+## 中间件
+
+`drelay/` 在这些输入契约上实现可持久使用的发布、跨区保存、切换、
+损失批准与消费入口，区域端完全本地仿真：
+
+    python3 -I drelay_console.py --data-dir ./data run examples/replication-hole.jsonl
+    python3 -I drelay_console.py --data-dir ./data inspect --stream s
+    python3 -I -m unittest discover
+
+状态机语义、回执级别与值班追查字段见 `drelay/README.md`。
