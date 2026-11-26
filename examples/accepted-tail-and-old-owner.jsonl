@@ -1,0 +1,12 @@
+{"at":0,"kind":"stream","record":{"stream":"s","tenant":"lab","primary":"a","secondary":"b","policy":"local"}}
+{"at":1,"kind":"write","record":{"stream":"s","region":"a","epoch":1,"id":"one","digest":"x"}}
+{"at":2,"kind":"copied","record":{"stream":"s","region":"b","source_epoch":1,"position":1,"digest":"x"}}
+{"at":3,"kind":"write","record":{"stream":"s","region":"a","epoch":1,"id":"two","digest":"y"}}
+{"at":4,"kind":"read","record":{"stream":"s","consumer":"c","after":1,"epoch":1}}
+{"at":5,"kind":"ack","record":{"stream":"s","consumer":"c","through":2}}
+{"at":6,"kind":"promote","record":{"stream":"s","region":"b","new_epoch":2}}
+{"at":7,"kind":"loss","record":{"stream":"s","span":[2,2]}}
+{"at":8,"kind":"promote","record":{"stream":"s","region":"b","new_epoch":2}}
+{"at":9,"kind":"write","record":{"stream":"s","region":"b","epoch":2,"id":"three","digest":"z"}}
+{"at":10,"kind":"write","record":{"stream":"s","region":"a","epoch":1,"id":"late","digest":"v"}}
+{"at":11,"kind":"read","record":{"stream":"s","consumer":"c","after":2,"epoch":1}}

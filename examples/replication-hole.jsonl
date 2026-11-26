@@ -1,0 +1,10 @@
+{"at":0,"kind":"stream","record":{"stream":"s","tenant":"lab","primary":"a","secondary":"b","policy":"regional"}}
+{"at":1,"kind":"write","record":{"stream":"s","region":"a","epoch":1,"id":"one","digest":"x"}}
+{"at":2,"kind":"write","record":{"stream":"s","region":"a","epoch":1,"id":"two","digest":"y"}}
+{"at":3,"kind":"copied","record":{"stream":"s","region":"b","source_epoch":1,"position":2,"digest":"y"}}
+{"at":4,"kind":"promote","record":{"stream":"s","region":"b","new_epoch":2}}
+{"at":5,"kind":"loss","record":{"stream":"s","span":[1,1]}}
+{"at":6,"kind":"copied","record":{"stream":"s","region":"b","source_epoch":1,"position":1,"digest":"x"}}
+{"at":7,"kind":"promote","record":{"stream":"s","region":"b","new_epoch":2}}
+{"at":8,"kind":"read","record":{"stream":"s","consumer":"client","after":0,"epoch":1}}
+{"at":9,"kind":"restart","record":{}}
